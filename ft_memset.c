@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/01 23:28:02 by imehdid           #+#    #+#             */
+/*   Updated: 2023/11/01 23:28:04 by imehdid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 void	*ft_memset(void *pointer, int value, size_t count)
@@ -13,4 +25,5 @@ void	*ft_memset(void *pointer, int value, size_t count)
 		str++;
 		i++;
 	}
+	return (pointer);
 }

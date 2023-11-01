@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 23:27:12 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/01 23:27:14 by imehdid          ###   ########.fr       */
+/*   Created: 2023/11/01 23:26:57 by imehdid           #+#    #+#             */
+/*   Updated: 2023/11/01 23:27:00 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include <stdlib.h>
+
+void	ft_bzero(void *s, size_t n)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+	size_t	i;
+	char	*str;
+
+	i = 0;
+	str = s;
+	while (i < n)
+	{
+		*str = '\0';
+		str++;
+		i++;
+	}
+}
+
+void	*ft_calloc(size_t elementCount, size_t elementSize)
+{
+	void	*array;
+
+	array = malloc(elementCount * elementSize);
+	ft_bzero(array, elementCount);
+	return (array);
 }

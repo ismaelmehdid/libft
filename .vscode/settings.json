@@ -1,6 +1,7 @@
 {
 	"files.associations": {
 		"stdio.h": "c",
-		"ft_strrchr.C": "cpp"
+		"ft_strrchr.C": "cpp",
+		"stdlib.h": "c"
 	}
 }
