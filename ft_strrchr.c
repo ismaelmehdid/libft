@@ -6,11 +6,11 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:28:41 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/01 23:28:41 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/02 00:36:23 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *string, int searchedChar)
 {

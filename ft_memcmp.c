@@ -6,11 +6,11 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:27:45 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/01 23:27:48 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/02 00:35:51 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *pointer1, const void *pointer2, size_t size)
 {

@@ -6,9 +6,11 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:28:49 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/01 23:29:17 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/02 00:36:43 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

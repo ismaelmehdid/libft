@@ -6,11 +6,11 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:27:52 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/01 23:27:53 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/02 00:35:53 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *destination, const void *source, size_t size)
 {

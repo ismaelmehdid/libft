@@ -6,9 +6,11 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:25:41 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/01 23:26:04 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/02 00:35:01 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

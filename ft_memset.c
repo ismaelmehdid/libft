@@ -6,11 +6,11 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:28:02 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/01 23:28:04 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/02 00:35:58 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memset(void *pointer, int value, size_t count)
 {
