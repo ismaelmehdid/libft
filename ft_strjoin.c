@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:39:38 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/02 15:47:47 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/04 00:02:26 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,26 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	return (NULL);
-}
+	int		i;
+	char	*array;
+	int		e;
 
-#include <stdio.h>
-
-int	main(void)
-{
-	char array1[] = "salut";
-	char spacer[] = " - ";
-	printf("%s", strjoin(array1, spacer));
+	i = 0;
+	e = 0;
+	array = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	while (s1[i])
+	{
+		array[e] = s1[i];
+		e++;
+		i++;
+	}
+	i = 0;
+	while (s2[i])
+	{
+		array[e] = s2[i];
+		i++;
+		e++;
+	}
+	array[e] = '\0';
+	return (array);
 }
