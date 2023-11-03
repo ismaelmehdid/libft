@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 21:16:55 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/03 23:26:33 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/04 00:04:15 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ char	**ft_split(char const *s, char c)
 
 	array = malloc(sizeof(char *) * countwords(s, c));
 	array = malloceacharray(array, s, c);
+	if (array == NULL)
+		return (NULL);
 	fill(array, s, c);
 	return (array);
 }
