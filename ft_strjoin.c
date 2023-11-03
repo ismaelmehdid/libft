@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:39:38 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/04 00:02:26 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/04 00:05:30 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	e = 0;
 	array = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (array == NULL)
+		return (NULL);
 	while (s1[i])
 	{
 		array[e] = s1[i];
