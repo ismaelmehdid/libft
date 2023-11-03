@@ -3,6 +3,9 @@
 		"stdio.h": "c",
 		"ft_strrchr.C": "cpp",
 		"stdlib.h": "c",
-		"libft.h": "c"
-	}
+		"libft.h": "c",
+		"array": "c",
+		"algorithm": "c"
+	},
+	"C_Cpp.errorSquiggles": "disabled"
 }

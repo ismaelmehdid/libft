@@ -6,11 +6,12 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:42:42 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/03 00:46:21 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/03 00:48:42 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	intlen(int n)
 {

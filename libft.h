@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 00:23:21 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/02 00:38:28 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/03 16:19:10 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 void	ft_bzero(void *s, size_t n);
 
@@ -34,6 +35,8 @@ char	*ft_strdup(const char *source);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 char	*ft_strrchr(const char *string, int searchedChar);
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
