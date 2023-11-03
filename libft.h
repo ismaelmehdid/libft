@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 00:23:21 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/03 16:19:10 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/03 19:51:04 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+void	ft_putstr_fd(char *s, int fd);
+
+void	ft_putchar_fd(char c, int fd);
 
 void	ft_bzero(void *s, size_t n);
 
