@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:28:07 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/02 00:36:01 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/04 20:07:47 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 char	*ft_strchr(const char *string, int searchedChar)
 {
-	if (!searchedChar)
+	if (!string)
 		return (NULL);
 	while (*string)
 	{
-		if (*string == searchedChar)
+		if (*string == (char)searchedChar)
 			return ((char *)string);
 		string++;
 	}
-	return (0);
+	if (*string == (char)searchedChar)
+		return((char *)(string));
+	return (NULL);
 }
