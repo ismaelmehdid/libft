@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:27:57 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/04 18:46:37 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/04 18:49:10 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	*ft_memmove(void *destination, const void *source, size_t size)
 		i = (int)size--;
 		while (i >= 0)
 		{
-			*(unsigned char *)(destination + i) = *(unsigned char *)(source + i);
+			*(unsigned char *)(destination + i)
+				= *(unsigned char *)(source + i);
 			i--;
 		}
 	}
@@ -30,7 +31,8 @@ void	*ft_memmove(void *destination, const void *source, size_t size)
 		i = (int)size;
 		while (i >= 0)
 		{
-			*(unsigned char *)(destination + i) = *(unsigned char *)(source + i);
+			*(unsigned char *)(destination + i)
+				= *(unsigned char *)(source + i);
 			i--;
 		}
 	}
