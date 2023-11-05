@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:27:40 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/02 00:35:47 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/05 23:06:05 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size)
 {
 	size_t	i;
 
-	if (!memoryBlock)
-		return (NULL);
 	i = 0;
 	while (i < size)
 	{
