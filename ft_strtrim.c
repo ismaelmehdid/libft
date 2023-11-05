@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:44:53 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/02 18:55:24 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/05 20:57:06 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	isinset(char achar, char const *set)
 	i = 0;
 	while (set[i])
 	{
-		if (achar == set[i])
+		if (achar == set[i] || achar == '\0')
 			return (1);
 		i++;
 	}
@@ -33,6 +33,8 @@ int	isend(char const *s1, char const *set, int index)
 	else
 	{
 		index++;
+		if (!(isinset(s1[index], set)) && s1[index] != '\0')
+			return (0);
 		while (s1[index])
 		{
 			if (s1[index + 1] == '\0')
@@ -54,21 +56,21 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	e = 0;
 	i = 0;
+	if (!s1 || !set)
+		return (NULL);
 	len = ft_strlen(s1);
-	len--;
 	while (s1[i] && isinset(s1[i], set))
 		i++;
-	while (isinset(s1[len], set) && len != 0)
+	while (isinset(s1[len], set) && len != i)
 		len--;
 	len -= i;
-	len += 1;
+	if (len > 0)
+		len++;
 	array = malloc(sizeof(char) * len + 1);
+	if (array == NULL)
+		return (NULL);
 	while (!(isend(s1, set, i)) && s1[i])
-	{
-		array[e] = s1[i];
-		e++;
-		i++;
-	}
+		array[e++] = s1[i++];
 	array[e] = '\0';
 	return (array);
 }
