@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:28:31 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/02 00:36:15 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/05 22:58:04 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	ft_strncmp(const char *first, const char *second, size_t length)
 	i = 0;
 	if (first[0] == '\0' && second[0] == '\0')
 		return (0);
-	while (i != length)
+	while ((first[i] || second[i]) && i != length)
 	{
 		if (second[i] != first[i])
-			return (first[i] - second[i]);
+			return (((unsigned char)first[i] - (unsigned char)second[i]));
 		i++;
 	}
 	return (0);
