@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 21:16:55 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/04 00:04:15 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/05 19:42:50 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,13 @@ char	**fill(char **array, char const *s, char c)
 			break ;
 		while (s[i] != c && s[i] != '\0')
 		{
-			array[j][e] = s[i];
-			i++;
-			e++;
+			array[j][e++] = s[i++];
 		}
 		array[j][e] = '\0';
 		e = 0;
 		j++;
 	}
+	array[j] = NULL;
 	return (array);
 }
 
@@ -80,9 +79,10 @@ char	**malloceacharray(char **array, char const *s, char c)
 			wordsize++;
 			i++;
 		}
-		array[j] = malloc(sizeof(char) * wordsize + 1);
-		j++;
+		array[j++] = malloc(sizeof(char) * wordsize + 1);
+		wordsize = 0;
 	}
+	array[j] = malloc(1);
 	return (array);
 }
 
@@ -90,7 +90,17 @@ char	**ft_split(char const *s, char c)
 {
 	char	**array;
 
-	array = malloc(sizeof(char *) * countwords(s, c));
+	if (c == '\0')
+	{
+		array = malloc(sizeof(char *));
+		if (array == NULL)
+			return (NULL);
+		array[0] = NULL;
+		return (array);
+	}
+	array = malloc(sizeof(char *) * countwords(s, c) + sizeof(char *));
+	if (array == NULL)
+		return (NULL);
 	array = malloceacharray(array, s, c);
 	if (array == NULL)
 		return (NULL);
