@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:42:42 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/04 00:46:26 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/05 02:50:04 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	intlen(int n)
 	int	i;
 
 	i = 0;
+	if (n == 0)
+		return (1);
 	while (n != 0)
 	{
 		n = n / 10;
@@ -25,26 +27,29 @@ int	intlen(int n)
 	return (i);
 }
 
-int	abs(int n)
+unsigned int	ft_abs(int n)
 {
+	if (n == -2147483648)
+		return (-((unsigned int)n));
 	if (n < 0)
-		return (-n);
-	return (n);
+		return (-((unsigned int)n));
+	return (-((unsigned int)n));
 }
 
 char	*convert(int n, int len, char *array)
 {
+	unsigned int	value;
+
+	value = ft_abs(n);
 	if (n < 0)
 	{
-		n = abs(n);
 		len++;
 		array[len] = '\0';
 		len--;
 		while (len != 0)
 		{
-			array[len] = n % 10 + '0';
-			n = n / 10;
-			len--;
+			array[len--] = value % 10 + '0';
+			value = value / 10;
 		}
 		array[len] = '-';
 		return (array);
@@ -53,9 +58,8 @@ char	*convert(int n, int len, char *array)
 	len--;
 	while (len != -1)
 	{
-		array[len] = n % 10 + '0';
+		array[len--] = n % 10 + '0';
 		n = n / 10;
-		len--;
 	}
 	return (array);
 }
