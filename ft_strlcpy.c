@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:28:22 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/04 21:41:56 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/06 19:09:19 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,28 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	i;
-	int	len;
+	size_t	i;
+	int		len;
 
 	len = 0;
 	i = 0;
-	if (!src)
+	len = ft_strlen(src);
+	if (!*src)
+	{
+		*dst = '\0';
 		return (0);
-	while (src[len])
-		len++;
+	}
 	if (size > 0)
 	{
-		while (i < (int)size)
+		while (i < size - 1 && *src)
 		{
-			*(char *)dst = *(char *)src;
+			*dst = *src;
 			dst++;
 			src++;
 			i++;
 		}
-		*(char *)dst = '\0';
+		*dst = '\0';
+		return (len);
 	}
 	return (len);
 }
