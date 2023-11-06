@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:28:35 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/04 00:19:33 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/06 21:05:28 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,23 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	int	j;
 
 	e = 0;
-	j = 0;
-	while (little[j])
-		j++;
+	j = ft_strlen(little);
+	if ((big == NULL && len == 0) || (ft_strlen(little) > ft_strlen(big)))
+		return (NULL);
+	if (!*little)
+		return ((char *)big);
 	while (*big && len != 0)
 	{
 		if (*big == little[0])
 		{
-			while (*big == little[e])
+			while (*big == little[e++])
 			{
-				e++;
 				if (e == j)
 					return ((char *)(big - e + 1));
 				big++;
 			}
 		}
-		len --;
+		len--;
 		big++;
 		e = 0;
 	}
