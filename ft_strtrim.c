@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:44:53 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/05 20:57:06 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/07 21:17:48 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	isinset(char achar, char const *set)
 	i = 0;
 	while (set[i])
 	{
-		if (achar == set[i] || achar == '\0')
+		if (achar == set[i])
 			return (1);
 		i++;
 	}
@@ -56,16 +56,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	e = 0;
 	i = 0;
-	if (!s1 || !set)
-		return (NULL);
 	len = ft_strlen(s1);
-	while (s1[i] && isinset(s1[i], set))
+	while (isinset(s1[i], set) && s1[i])
 		i++;
-	while (isinset(s1[len], set) && len != i)
+	if (i == len)
+		return ("");
+	while ((isinset(s1[len], set) && len != i) || s1[len] == '\0')
 		len--;
 	len -= i;
-	if (len > 0)
-		len++;
+	len++;
 	array = malloc(sizeof(char) * len + 1);
 	if (array == NULL)
 		return (NULL);
