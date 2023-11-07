@@ -6,7 +6,7 @@
 /*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:28:35 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/06 21:05:28 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/07 18:01:50 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	{
 		if (*big == little[0])
 		{
-			while (*big == little[e++])
+			while (*big == little[e++] && len-- != 0)
 			{
 				if (e == j)
 					return ((char *)(big - e + 1));
