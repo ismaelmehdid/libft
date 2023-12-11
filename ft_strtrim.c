@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
+/*   By: imehdid <imehdid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:44:53 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/07 21:17:48 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/13 12:31:33 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isinset(char achar, char const *set)
+static int	isinset(char achar, char const *set)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	isinset(char achar, char const *set)
 	return (0);
 }
 
-int	isend(char const *s1, char const *set, int index)
+static int	isend(char const *s1, char const *set, int index)
 {
 	if (!(isinset(s1[index], set)))
 		return (0);
@@ -54,17 +54,19 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		len;
 	int		e;
 
+	if (!s1 || !set)
+		return (NULL);
 	e = 0;
 	i = 0;
-	len = ft_strlen(s1);
+	len = ft_strlen(s1) - 1;
 	while (isinset(s1[i], set) && s1[i])
 		i++;
-	if (i == len)
-		return ("");
-	while ((isinset(s1[len], set) && len != i) || s1[len] == '\0')
+	while ((isinset(s1[len], set)))
 		len--;
-	len -= i;
 	len++;
+	len -= i;
+	if ((len * (-1)) == ft_strlen(s1))
+		len = 0;
 	array = malloc(sizeof(char) * len + 1);
 	if (array == NULL)
 		return (NULL);

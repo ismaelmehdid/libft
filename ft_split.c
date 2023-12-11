@@ -3,16 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
+/*   By: imehdid <imehdid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 21:16:55 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/05 19:42:50 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/13 12:32:21 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**fill(char **array, char const *s, char c)
+static void	ft_freeall(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+}
+
+static char	**fill(char **array, char const *s, char c)
 {
 	int	i;
 	int	j;
@@ -39,7 +52,7 @@ char	**fill(char **array, char const *s, char c)
 	return (array);
 }
 
-int	countwords(char const *s, char c)
+static int	countwords(char const *s, char c)
 {
 	int	i;
 	int	words;
@@ -59,49 +72,47 @@ int	countwords(char const *s, char c)
 	return (words);
 }
 
-char	**malloceacharray(char **array, char const *s, char c)
+static char	**malloceacharray(char **array, char const *s, char c, int i)
 {
-	int	i;
 	int	wordsize;
 	int	j;
 
 	j = 0;
 	wordsize = 0;
-	i = 0;
 	while (s[i])
 	{
 		while (s[i] == c && s[i] != '\0')
 			i++;
 		if (s[i] == '\0')
 			break ;
-		while (s[i] != c && s[i] != '\0')
-		{
+		while (s[i + wordsize] != c && s[i + wordsize] != '\0')
 			wordsize++;
-			i++;
+		i += wordsize;
+		array[j] = malloc(sizeof(char) * wordsize + 1);
+		if (array[j] == NULL)
+		{
+			ft_freeall(array);
+			return (NULL);
 		}
-		array[j++] = malloc(sizeof(char) * wordsize + 1);
+		j++;
 		wordsize = 0;
 	}
-	array[j] = malloc(1);
+	array[j] = 0;
 	return (array);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
+	int		i;
 
-	if (c == '\0')
-	{
-		array = malloc(sizeof(char *));
-		if (array == NULL)
-			return (NULL);
-		array[0] = NULL;
-		return (array);
-	}
-	array = malloc(sizeof(char *) * countwords(s, c) + sizeof(char *));
+	i = 0;
+	if (!s)
+		return (NULL);
+	array = (char **)malloc(sizeof(char *) * countwords(s, c) + sizeof(char *));
 	if (array == NULL)
 		return (NULL);
-	array = malloceacharray(array, s, c);
+	array = malloceacharray(array, s, c, i);
 	if (array == NULL)
 		return (NULL);
 	fill(array, s, c);

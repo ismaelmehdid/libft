@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
+/*   By: imehdid <imehdid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 00:23:21 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/04 00:45:22 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/09 19:53:09 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_isprint(int c);
 
 char	*ft_itoa(int n);
 
-void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size);
+void	*ft_memchr(const void *memoryblock, int searchedchar, size_t size);
 
 int		ft_memcmp(const void *pointer1, const void *pointer2, size_t size);
 

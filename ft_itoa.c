@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	intlen(int n)
+static int	intlen(int n)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ int	intlen(int n)
 	return (i);
 }
 
-unsigned int	ft_abs(int n)
+static unsigned int	ft_abs(int n)
 {
 	if (n == -2147483648)
 		return (-((unsigned int)n));
@@ -36,7 +36,7 @@ unsigned int	ft_abs(int n)
 	return (-((unsigned int)n));
 }
 
-char	*convert(int n, int len, char *array)
+static char	*convert(int n, int len, char *array)
 {
 	unsigned int	value;
 

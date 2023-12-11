@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
+/*   By: imehdid <imehdid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:28:22 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/06 19:09:19 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/09 19:53:07 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	len = 0;
 	i = 0;
 	len = ft_strlen(src);
-	if (!*src)
+	if (!src)
 	{
 		*dst = '\0';
 		return (0);

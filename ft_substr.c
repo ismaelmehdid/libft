@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imehdid <imehdid@student.42angouleme.fr    +#+  +:+       +#+        */
+/*   By: imehdid <imehdid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:16:37 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/05 02:09:40 by imehdid          ###   ########.fr       */
+/*   Updated: 2023/11/13 12:52:06 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,29 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	save;
-	char			*array;
-	size_t			count;
-	int				i;
+	char	*array;
+	size_t	i;
 
-	save = start;
 	i = 0;
-	count = 0;
-	while (s[start++] && count < len)
-		count++;
-	array = malloc(sizeof(char) * count + 1);
-	if (array == NULL)
+	if (!s)
 		return (NULL);
-	start = save;
 	if (start < (unsigned int)ft_strlen(s) && len > 0)
 	{
-		while (s[start] && len > 0)
-		{
+		while (s[start++] && i < len)
+			i++;
+		array = malloc(sizeof(char) * i + sizeof(char));
+		if (array == NULL)
+			return (NULL);
+		start -= i + 1;
+		i = 0;
+		while (s[start] && i < len)
 			array[i++] = s[start++];
-			len--;
-		}
+		array[i] = '\0';
+		return (array);
 	}
+	array = malloc(sizeof(char));
+	if (array == NULL)
+		return (NULL);
 	array[i] = '\0';
 	return (array);
 }
