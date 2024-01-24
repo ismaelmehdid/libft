@@ -14,7 +14,7 @@
 
 ## 💡 About the project
 
-> This project is about recoding functions of the standart librarie in C language.
+> This project is about recoding functions of the standart library in C language.
 
 ## 🛠️ Usage
 
