@@ -17,6 +17,8 @@ char	*ft_strdup(const char *source)
 	char	*str;
 	int		i;
 
+	if (!source)
+		return (NULL);
 	i = 0;
 	while (source[i])
 		i++;
