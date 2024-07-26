@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imehdid <imehdid@student.42.fr>            +#+  +:+       +#+        */
+/*   By: imehdid <ismaelmehdid@student.42.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:44:53 by imehdid           #+#    #+#             */
-/*   Updated: 2023/11/13 12:31:33 by imehdid          ###   ########.fr       */
+/*   Updated: 2024/07/26 16:13:50 by imehdid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,52 +26,29 @@ static int	isinset(char achar, char const *set)
 	return (0);
 }
 
-static int	isend(char const *s1, char const *set, int index)
-{
-	if (!(isinset(s1[index], set)))
-		return (0);
-	else
-	{
-		index++;
-		if (!(isinset(s1[index], set)) && s1[index] != '\0')
-			return (0);
-		while (s1[index])
-		{
-			if (s1[index + 1] == '\0')
-				return (1);
-			if (!(isinset(s1[index], set)))
-				return (0);
-			index++;
-		}
-	}
-	return (1);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*array;
-	int		i;
+	int		start;
+	int		end;
 	int		len;
-	int		e;
+	int		i;
 
 	if (!s1 || !set)
 		return (NULL);
-	e = 0;
-	i = 0;
-	len = ft_strlen(s1) - 1;
-	while (isinset(s1[i], set) && s1[i])
-		i++;
-	while ((isinset(s1[len], set)))
-		len--;
-	len++;
-	len -= i;
-	if ((len * (-1)) == ft_strlen(s1))
-		len = 0;
-	array = malloc(sizeof(char) * len + 1);
-	if (array == NULL)
+	start = 0;
+	while (s1[start] && isinset(s1[start], set))
+		start++;
+	end = ft_strlen(s1) - 1;
+	while (end >= start && isinset(s1[end], set))
+		end--;
+	len = end - start + 1;
+	array = malloc(sizeof(char) * (len + 1));
+	if (!array)
 		return (NULL);
-	while (!(isend(s1, set, i)) && s1[i])
-		array[e++] = s1[i++];
-	array[e] = '\0';
+	i = 0;
+	while (start <= end)
+		array[i++] = s1[start++];
+	array[i] = '\0';
 	return (array);
 }
